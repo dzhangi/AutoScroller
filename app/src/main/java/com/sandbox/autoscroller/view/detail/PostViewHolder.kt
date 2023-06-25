@@ -1,4 +1,4 @@
-package com.sandbox.autoscroller.viewmodel.detail
+package com.sandbox.autoscroller.view.detail
 
 import android.view.View
 import android.widget.ImageView
