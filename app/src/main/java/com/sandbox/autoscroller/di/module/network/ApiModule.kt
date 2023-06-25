@@ -11,7 +11,7 @@ class ApiModule {
 
     @Singleton
     @Provides
-    fun provideChuckApi(retrofit: Retrofit): ApiService {
+    fun provideAutoApi(retrofit: Retrofit): ApiService {
         return retrofit.create(ApiService::class.java)
     }
 }
