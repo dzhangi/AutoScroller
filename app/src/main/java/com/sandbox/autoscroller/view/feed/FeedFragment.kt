@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
-import com.sandbox.autoscroller.R
+import com.sandbox.autoscroller.databinding.FragmentFeedBinding
 import com.sandbox.autoscroller.di.module.viewmodel.ViewModelProviderFactory
 import com.sandbox.autoscroller.viewmodel.feed.FeedViewModel
 import dagger.android.support.DaggerFragment
@@ -13,6 +13,7 @@ import javax.inject.Inject
 
 
 class FeedFragment : DaggerFragment() {
+    private lateinit var binding: FragmentFeedBinding
 
     @Inject
     lateinit var factory: ViewModelProviderFactory
@@ -21,10 +22,10 @@ class FeedFragment : DaggerFragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-
+    ): View {
+        binding = FragmentFeedBinding.inflate(inflater, container, false)
         viewModel = ViewModelProvider(this, factory)[FeedViewModel::class.java]
 
-        return inflater.inflate(R.layout.fragment_feed, container, false)
+        return binding.root
     }
 }
