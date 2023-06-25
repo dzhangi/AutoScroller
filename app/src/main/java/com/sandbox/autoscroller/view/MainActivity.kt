@@ -1,4 +1,4 @@
-package com.sandbox.autoscroller
+package com.sandbox.autoscroller.view
 
 import android.os.Bundle
 import com.sandbox.autoscroller.databinding.ActivityMainBinding

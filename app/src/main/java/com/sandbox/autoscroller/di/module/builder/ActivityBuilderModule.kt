@@ -1,6 +1,6 @@
 package com.sandbox.autoscroller.di.module.builder
 
-import com.sandbox.autoscroller.MainActivity
+import com.sandbox.autoscroller.view.MainActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 

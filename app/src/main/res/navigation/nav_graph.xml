@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/feedFragment"
-        android:name="com.sandbox.autoscroller.FeedFragment"
+        android:name="com.sandbox.autoscroller.view.feed.FeedFragment"
         android:label="fragment_feed"
         tools:layout="@layout/fragment_feed" />
 </navigation>
