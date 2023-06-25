@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.sandbox.autoscroller.databinding.FragmentFeedBinding
 import com.sandbox.autoscroller.di.module.viewmodel.ViewModelProviderFactory
@@ -30,8 +31,8 @@ class FeedFragment : DaggerFragment() {
     private val itemClickListener = object : OnItemClickListener {
         override fun onItemClick(position: Int, item: Any) {
             val carId = (item as Car).id
-
-            // Navigate to detail fragment
+            val action = FeedFragmentDirections.actionFeedFragmentToDetailFragment(carId, position)
+            findNavController().navigate(action)
         }
     }
 
