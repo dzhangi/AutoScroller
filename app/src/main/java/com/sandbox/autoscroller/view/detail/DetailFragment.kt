@@ -5,13 +5,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
-import com.sandbox.autoscroller.R
+import com.sandbox.autoscroller.databinding.FragmentDetailBinding
 import com.sandbox.autoscroller.di.module.viewmodel.ViewModelProviderFactory
 import com.sandbox.autoscroller.viewmodel.detail.DetailViewModel
 import dagger.android.support.DaggerFragment
 import javax.inject.Inject
 
 class DetailFragment : DaggerFragment() {
+    private lateinit var binding: FragmentDetailBinding
 
     @Inject
     lateinit var factory: ViewModelProviderFactory
@@ -21,9 +22,9 @@ class DetailFragment : DaggerFragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
+        binding = FragmentDetailBinding.inflate(inflater, container, false)
         viewModel = ViewModelProvider(this, factory)[DetailViewModel::class.java]
 
-        return inflater.inflate(R.layout.fragment_detail, container, false)
+        return binding.root
     }
 }
